@@ -41,61 +41,71 @@ export default function sidebar() {
           </Link>
 
           {(hasAnyPermission(["categories.index"]) ||
+            hasAnyPermission(["categoriespotensi.index"]) ||
             hasAnyPermission(["posts.index"]) ||
-            hasAnyPermission(["feedback.index"]) ||
+            // hasAnyPermission(["potensi.index"]) ||
+            // hasAnyPermission(["feedback.index"]) ||
             hasAnyPermission(["pages.index"]) ||
             hasAnyPermission(["products.index"])) && (
-            <>
-              <div className="sb-sidenav-menu-heading">CONTENT MANAGEMENT</div>
-              <a
-                className={
-                  "nav-link collapsed " +
-                  (activeRoute[2] === "categories"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "posts"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "feedback"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "pages"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "products"
-                    ? " active-sidebar"
-                    : "")
-                }
-                href="#"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseLayouts"
-                aria-expanded="false"
-                aria-controls="collapseLayouts"
-              >
-                <div className="sb-nav-link-icon">
-                  <i className="fas fa-pencil"></i>
-                </div>
-                Contents
-                <div className="sb-sidenav-collapse-arrow">
-                  <i
-                    className="fas fa-angle-down"
-                    style={{ color: "color: rgb(65 60 60)" }}
-                  ></i>
-                </div>
-              </a>
-            </>
-          )}
+              <>
+                <div className="sb-sidenav-menu-heading">CONTENT MANAGEMENT</div>
+                <a
+                  className={
+                    "nav-link collapsed " +
+                    (activeRoute[2] === "categories"
+                      ? " active-sidebar"
+                      : activeRoute[2] === "categoriespotensi"
+                        ? " active-sidebar"
+                        : activeRoute[2] === "posts"
+                          ? " active-sidebar"
+                          // : activeRoute[2] === "potensi"
+                          //   ? " active-sidebar"
+                            // : activeRoute[2] === "feedback"
+                            //   ? " active-sidebar"
+                              : activeRoute[2] === "pages"
+                                ? " active-sidebar"
+                                : activeRoute[2] === "products"
+                                  ? " active-sidebar"
+                                  : "")
+                  }
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLayouts"
+                  aria-expanded="false"
+                  aria-controls="collapseLayouts"
+                >
+                  <div className="sb-nav-link-icon">
+                    <i className="fas fa-pencil"></i>
+                  </div>
+                  Contents
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i
+                      className="fas fa-angle-down"
+                      style={{ color: "color: rgb(65 60 60)" }}
+                    ></i>
+                  </div>
+                </a>
+              </>
+            )}
 
           <div
             className={
               "collapse " +
               (activeRoute[2] === "categories"
                 ? " show"
-                : activeRoute[2] === "posts"
-                ? " show"
-                : activeRoute[2] === "feedback"
-                ? " show"
-                : activeRoute[2] === "pages"
-                ? " show"
-                : activeRoute[2] === "products"
-                ? " show"
-                : "")
+                : activeRoute[2] === "categoriespotensi"
+                  ? " show"
+                  : activeRoute[2] === "posts"
+                    ? " show"
+                    // : activeRoute[2] === "potensi"
+                    //   ? " show"
+                      // : activeRoute[2] === "feedback"
+                      //   ? " show"
+                        : activeRoute[2] === "pages"
+                          ? " show"
+                          : activeRoute[2] === "products"
+                            ? " show"
+                            : "")
             }
             id="collapseLayouts"
             aria-labelledby="headingOne"
@@ -114,6 +124,19 @@ export default function sidebar() {
                   Categories
                 </Link>
               )}
+{/* 
+              {hasAnyPermission(["categoriespotensi.index"]) && (
+                <Link
+                  className={
+                    activeRoute[2] === "categoriespotensi"
+                      ? "nav-link active-sidebar"
+                      : "nav-link"
+                  }
+                  to="/admin/categoriespotensi"
+                >
+                  CategoriesPotensi
+                </Link>
+              )} */}
 
               {hasAnyPermission(["posts.index"]) && (
                 <Link
@@ -128,7 +151,20 @@ export default function sidebar() {
                 </Link>
               )}
 
-              {hasAnyPermission(["feedback.index"]) && (
+              {/* {hasAnyPermission(["potensi.index"]) && (
+                <Link
+                  className={
+                    activeRoute[2] === "potensi"
+                      ? "nav-link active-sidebar"
+                      : "nav-link"
+                  }
+                  to="/admin/potensi"
+                >
+                  Potensi
+                </Link>
+              )} */}
+
+              {/* {hasAnyPermission(["feedback.index"]) && (
                 <Link
                   className={
                     activeRoute[2] === "feedback"
@@ -139,7 +175,7 @@ export default function sidebar() {
                 >
                   Feedback
                 </Link>
-              )}
+              )} */}
 
               {hasAnyPermission(["pages.index"]) && (
                 <Link
@@ -171,44 +207,44 @@ export default function sidebar() {
 
           {(hasAnyPermission(["photos.index"]) ||
             hasAnyPermission(["sliders.index"])) && (
-            <>
-              <div className="sb-sidenav-menu-heading">MEDIA MANAGEMENT</div>
-              <a
-                className={
-                  "nav-link collapsed " +
-                  (activeRoute[2] === "photos"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "sliders"
-                    ? " active-sidebar"
-                    : "")
-                }
-                href="#"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseMedias"
-                aria-expanded="false"
-                aria-controls="collapseMedias"
-              >
-                <div className="sb-nav-link-icon">
-                  <i className="fas fa-images"></i>
-                </div>
-                Media
-                <div className="sb-sidenav-collapse-arrow">
-                  <i
-                    className="fas fa-angle-down"
-                    style={{ color: "color: rgb(65 60 60)" }}
-                  ></i>
-                </div>
-              </a>
-            </>
-          )}
+              <>
+                <div className="sb-sidenav-menu-heading">MEDIA MANAGEMENT</div>
+                <a
+                  className={
+                    "nav-link collapsed " +
+                    (activeRoute[2] === "photos"
+                      ? " active-sidebar"
+                      : activeRoute[2] === "sliders"
+                        ? " active-sidebar"
+                        : "")
+                  }
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseMedias"
+                  aria-expanded="false"
+                  aria-controls="collapseMedias"
+                >
+                  <div className="sb-nav-link-icon">
+                    <i className="fas fa-images"></i>
+                  </div>
+                  Media
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i
+                      className="fas fa-angle-down"
+                      style={{ color: "color: rgb(65 60 60)" }}
+                    ></i>
+                  </div>
+                </a>
+              </>
+            )}
           <div
             className={
               "collapse " +
               (activeRoute[2] === "photos"
                 ? " show"
                 : activeRoute[2] === "sliders"
-                ? " show"
-                : "")
+                  ? " show"
+                  : "")
             }
             id="collapseMedias"
             aria-labelledby="headingOne"
@@ -265,48 +301,48 @@ export default function sidebar() {
           {(hasAnyPermission(["roles.index"]) ||
             hasAnyPermission(["permissions.index"]) ||
             hasAnyPermission(["users.index"])) && (
-            <>
-              <div className="sb-sidenav-menu-heading">USERS MANAGEMENT</div>
-              <a
-                className={
-                  "nav-link collapsed " +
-                  (activeRoute[2] === "roles"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "permissions"
-                    ? " active-sidebar"
-                    : activeRoute[2] === "users"
-                    ? " active-sidebar"
-                    : "")
-                }
-                href="#"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseUsers"
-                aria-expanded="false"
-                aria-controls="collapseUsers"
-              >
-                <div className="sb-nav-link-icon">
-                  <i className="fas fa-user-circle"></i>
-                </div>
-                Users
-                <div className="sb-sidenav-collapse-arrow">
-                  <i
-                    className="fas fa-angle-down"
-                    style={{ color: "color: rgb(65 60 60)" }}
-                  ></i>
-                </div>
-              </a>
-            </>
-          )}
+              <>
+                <div className="sb-sidenav-menu-heading">USERS MANAGEMENT</div>
+                <a
+                  className={
+                    "nav-link collapsed " +
+                    (activeRoute[2] === "roles"
+                      ? " active-sidebar"
+                      : activeRoute[2] === "permissions"
+                        ? " active-sidebar"
+                        : activeRoute[2] === "users"
+                          ? " active-sidebar"
+                          : "")
+                  }
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseUsers"
+                  aria-expanded="false"
+                  aria-controls="collapseUsers"
+                >
+                  <div className="sb-nav-link-icon">
+                    <i className="fas fa-user-circle"></i>
+                  </div>
+                  Users
+                  <div className="sb-sidenav-collapse-arrow">
+                    <i
+                      className="fas fa-angle-down"
+                      style={{ color: "color: rgb(65 60 60)" }}
+                    ></i>
+                  </div>
+                </a>
+              </>
+            )}
           <div
             className={
               "collapse " +
               (activeRoute[2] === "roles"
                 ? " show"
                 : activeRoute[2] === "permissions"
-                ? " show"
-                : activeRoute[2] === "users"
-                ? " show"
-                : "")
+                  ? " show"
+                  : activeRoute[2] === "users"
+                    ? " show"
+                    : "")
             }
             id="collapseUsers"
             aria-labelledby="headingOne"

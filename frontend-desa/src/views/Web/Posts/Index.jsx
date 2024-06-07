@@ -69,7 +69,7 @@ export default function WebPostsIndex() {
         <div classname="row">
           <div className="col-md-12">
             <h5 className="text-uppercase">
-              <i className="fa fa-book"></i> BERITA DESA
+              <i className="fa fa-book"></i> POTENSI DESA
             </h5>
             <hr />
           </div>

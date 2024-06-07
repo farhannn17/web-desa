@@ -111,9 +111,9 @@ export default function Home() {
           <div className="col-md-12 mb-3">
             <div className="section-title">
               <h4>
-                <i className="fa fa-book"></i>
-                <strong style={{ color: "rgb(209 104 0)" }}> BERITA </strong>
-                TERBARU
+                <i className="fa fa-industry"></i>
+                <strong style={{ color: "rgb(209 104 0)" }}> POTENSI </strong>
+                DESA
               </h4>
             </div>
           </div>

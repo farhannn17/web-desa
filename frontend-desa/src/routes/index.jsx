@@ -47,6 +47,7 @@ import CategoriesCreate from "../views/Admin/Categories/Create";
 //import view categories edit
 import CategoriesEdit from "../views/Admin/Categories/Edit";
 
+
 //import view posts index
 import PostsIndex from "../views/Admin/Posts/Index";
 
@@ -55,15 +56,6 @@ import PostsCreate from "../views/admin/posts/create";
 
 //import view posts edit
 import PostsEdit from "../views/Admin/Posts/Edit";
-
-// //import view potensi index
-// import PotensiIndex from "../views/Admin/Potensi/Index";
-
-// //import view Potensi create
-// import PotensiCreate from "../views/Admin/Potensi/create";
-
-// //import view Potensi edit
-// import PotensiEdit from "../views/Admin/Potensi/Edit";
 
 //import view pages index
 import PagesIndex from "../views/Admin/Pages/Index";
@@ -74,14 +66,14 @@ import PagesCreate from "../views/Admin/Pages/Create";
 //import view pages edit
 import PagesEdit from "../views/Admin/Pages/Edit";
 
-//import view feedback index
-import FeedbackIndex from "../views/Admin/Feedback/Index";
+// //import view feedback index
+// import FeedbackIndex from "../views/Admin/Feedback/Index";
 
-//import view feedback create
-import FeedbackCreate from "../views/Admin/Feedback/Create";
+// //import view feedback create
+// import FeedbackCreate from "../views/Admin/Feedback/Create";
 
-//import view feedback edit
-import FeedbackEdit from "../views/Admin/Feedback/Edit";
+// //import view feedback edit
+// import FeedbackEdit from "../views/Admin/Feedback/Edit";
 
 //import view products index
 import ProductsIndex from "../views/Admin/Products/Index";
@@ -123,11 +115,15 @@ import WebPagesIndex from "../views/Web/Pages/Index";
 //import view page show
 import WebPagesShow from "../views/Web/Pages/Show";
 
-//import view feedback index
-import WebFeedbackIndex from "../views/Web/feedback";
+import WebSaransIndex from "../views/Web/Sarans/Index";
 
-//import view feedback show
-import WebFeedbackShow from "../views/Web/feedback/show";
+import WebSaransShow from "../views/Web/Sarans/Show";
+
+// //import view feedback index
+// import WebFeedbackIndex from "../views/Web/feedback";
+
+// //import view feedback show
+// import WebFeedbackShow from "../views/Web/feedback/show";
 
 //import view photos index
 import WebPhotosIndex from "../views/Web/Photos/Index";
@@ -138,17 +134,12 @@ import WebPostsIndex from "../views/Web/Posts/Index";
 //import view post show
 import WebPostsShow from "../views/Web/Posts/Show";
 
-// //import view potensi index
-// import WebPotensiIndex from "../views/Web/Potensi/Index";
-
-// //import view post show
-// import WebPotensiShow from "../views/Web/Potensi/Show";
-
 //import view products index
 import WebProductsIndex from "../views/Web/Products/Index";
 
 //import view products show
 import WebProductsShow from "../views/Web/Products/Show";
+
 
 export default function RoutesIndex() {
   return (
@@ -299,36 +290,6 @@ export default function RoutesIndex() {
         }
       />
 
-      {/* private route "/admin/potensi" */}
-      {/* <Route
-        path="/admin/potensi"
-        element={
-          <PrivateRoutes>
-            <PotensiIndex />
-          </PrivateRoutes>
-        }
-      /> */}
-
-      {/* private route "/admin/potensi/create" */}
-      {/* <Route
-        path="/admin/potensi/create"
-        element={
-          <PrivateRoutes>
-            <PotensiCreate />
-          </PrivateRoutes>
-        }
-      /> */}
-
-      {/* private route "/admin/potensi/edit" */}
-      {/* <Route
-        path="/admin/potensi/edit/:id"
-        element={
-          <PrivateRoutes>
-            <PotensiEdit />
-          </PrivateRoutes>
-        }
-      /> */}
-
       {/* private route "/admin/pages" */}
       <Route
         path="/admin/pages"
@@ -359,7 +320,7 @@ export default function RoutesIndex() {
         }
       />
 
-      {/* private route "/admin/feedback" */}
+      {/* private route "/admin/feedback"
       <Route
         path="/admin/feedback"
         element={
@@ -367,9 +328,9 @@ export default function RoutesIndex() {
             <FeedbackIndex />
           </PrivateRoutes>
         }
-      />
+      /> */}
 
-      {/* private route "/admin/feedback/create" */}
+      {/* private route "/admin/feedback/create"
       <Route
         path="/admin/feedback/create"
         element={
@@ -377,9 +338,9 @@ export default function RoutesIndex() {
             <FeedbackCreate />
           </PrivateRoutes>
         }
-      />
+      /> */}
 
-      {/* private route "/admin/feedback/edit" */}
+      {/* private route "/admin/feedback/edit"
       <Route
         path="/admin/feedback/edit/:id"
         element={
@@ -387,7 +348,7 @@ export default function RoutesIndex() {
             <FeedbackEdit />
           </PrivateRoutes>
         }
-      />
+      /> */}
 
       {/* private route "/admin/products" */}
       <Route
@@ -481,11 +442,17 @@ export default function RoutesIndex() {
       {/* route "/pages/:slug" */}
       <Route path="/pages/:slug" element={<WebPagesShow />} />
 
-      {/* route "/feedback" */}
-      <Route path="/feedback" element={<WebFeedbackIndex />} />
+       {/* route "/pages" */}
+       <Route path="/sarans" element={<WebSaransIndex />} />
 
-      {/* route "/feedback/:slug" */}
-      <Route path="/feedback/:slug" element={<WebFeedbackShow />} />
+      {/* route "/pages/:slug" */}
+      <Route path="/sarans/:slug" element={<WebSaransShow />} />
+
+      {/* route "/feedback" */}
+      {/* <Route path="/feedback" element={<WebFeedbackIndex />} /> */}
+
+      {/* route "/feedback/:slug"
+      <Route path="/feedback/:slug" element={<WebFeedbackShow />} /> */}
 
       {/* route "/photos" */}
       <Route path="/photos" element={<WebPhotosIndex />} />
@@ -495,12 +462,6 @@ export default function RoutesIndex() {
 
       {/* route "/posts/:slug" */}
       <Route path="/posts/:slug" element={<WebPostsShow />} />
-
-      {/* route "/potensi" */}
-      {/* <Route path="/potensi" element={<WebPotensiIndex />} /> */}
-
-      {/* route "/potensi/:slug" */}
-      {/* <Route path="/potensi/:slug" element={<WebPotensiShow />} /> */}
 
       {/* route "/products" */}
       <Route path="/products" element={<WebProductsIndex />} />

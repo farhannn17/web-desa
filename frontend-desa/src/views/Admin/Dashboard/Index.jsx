@@ -42,81 +42,69 @@ export default function Dashboard() {
       setCountProducts(response.data.data.products);
       setCountAparaturs(response.data.data.aparaturs);
     });
-  }, []);
+  }, [token]);
 
   return (
     <LayoutAdmin>
       <main>
-        <div class="container-fluid px-4 mt-5">
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4 border-0 shadow-sm">
-                <div class="card-body">
+        <div className="container-fluid px-4 mt-5">
+          <div className="row">
+            <div className="col-xl-3 col-md-6">
+              <div className="card bg-primary text-white mb-4 border-0 shadow-sm">
+                <div className="card-body">
                   <strong>{countCategories}</strong> CATEGORIES
                 </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <Link
-                    class="small text-white stretched-link"
-                    to="/admin/categories"
-                  >
+                <div className="card-footer d-flex align-items-center justify-content-between">
+                  <Link className="small text-white stretched-link" to="/admin/categories">
                     View Details
                   </Link>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
+                  <div className="small text-white">
+                    <i className="fas fa-angle-right"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-warning text-white mb-4 border-0 shadow-sm">
-                <div class="card-body">
+            <div className="col-xl-3 col-md-6">
+              <div className="card bg-warning text-white mb-4 border-0 shadow-sm">
+                <div className="card-body">
                   <strong>{countPosts}</strong> POSTS
                 </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <Link
-                    class="small text-white stretched-link"
-                    to="/admin/posts"
-                  >
+                <div className="card-footer d-flex align-items-center justify-content-between">
+                  <Link className="small text-white stretched-link" to="/admin/posts">
                     View Details
                   </Link>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
+                  <div className="small text-white">
+                    <i className="fas fa-angle-right"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-success text-white mb-4 border-0 shadow-sm">
-                <div class="card-body">
+            <div className="col-xl-3 col-md-6">
+              <div className="card bg-success text-white mb-4 border-0 shadow-sm">
+                <div className="card-body">
                   <strong>{countProducts}</strong> PRODUCTS
                 </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <Link
-                    class="small text-white stretched-link"
-                    to="/admin/products"
-                  >
+                <div className="card-footer d-flex align-items-center justify-content-between">
+                  <Link className="small text-white stretched-link" to="/admin/products">
                     View Details
                   </Link>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
+                  <div className="small text-white">
+                    <i className="fas fa-angle-right"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-danger text-white mb-4 border-0 shadow-sm">
-                <div class="card-body">
+            <div className="col-xl-3 col-md-6">
+              <div className="card bg-danger text-white mb-4 border-0 shadow-sm">
+                <div className="card-body">
                   <strong>{countAparaturs}</strong> APARATURS
                 </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                  <Link
-                    class="small text-white stretched-link"
-                    to="/admin/aparaturs"
-                  >
+                <div className="card-footer d-flex align-items-center justify-content-between">
+                  <Link className="small text-white stretched-link" to="/admin/aparaturs">
                     View Details
                   </Link>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
+                  <div className="small text-white">
+                    <i className="fas fa-angle-right"></i>
                   </div>
                 </div>
               </div>

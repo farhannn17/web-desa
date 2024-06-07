@@ -21,11 +21,15 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'posts.edit', 'guard_name' => 'api']);
         Permission::create(['name' => 'posts.delete', 'guard_name' => 'api']);
 
+         
+
         //permission for categories
         Permission::create(['name' => 'categories.index', 'guard_name' => 'api']);
         Permission::create(['name' => 'categories.create', 'guard_name' => 'api']);
         Permission::create(['name' => 'categories.edit', 'guard_name' => 'api']);
         Permission::create(['name' => 'categories.delete', 'guard_name' => 'api']);
+
+      
 
         //permission for sliders
         Permission::create(['name' => 'sliders.index', 'guard_name' => 'api']);
@@ -53,12 +57,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'products.edit', 'guard_name' => 'api']);
         Permission::create(['name' => 'products.delete', 'guard_name' => 'api']);
 
-        //permission for Feedback
-        Permission::create(['name' => 'feedback.index', 'guard_name' => 'api']);
-        Permission::create(['name' => 'feedback.create', 'guard_name' => 'api']);
-        Permission::create(['name' => 'feedback.edit', 'guard_name' => 'api']);
-        Permission::create(['name' => 'feedback.delete', 'guard_name' => 'api']);
-
+      
         //permission for pages
         Permission::create(['name' => 'pages.index', 'guard_name' => 'api']);
         Permission::create(['name' => 'pages.create', 'guard_name' => 'api']);

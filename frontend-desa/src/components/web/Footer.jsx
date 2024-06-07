@@ -46,7 +46,7 @@ export default function Footer() {
             </h5>
             <hr />
             <p>
-              <i className="fa fa-map-marker"></i> Desa Tanjungtirta, Kecamatan Punggelan, Kabupaten Banjarnegara
+              <i className="fa fa-map-marker"></i> Desa Tanjungtirta, Kecamatan Punggelan, Kabupaten Banjarnegara, Jawa Tengah
               <br />
               <br />
               <i className="fas fa-envelope"></i> Tanjungtirta123@gmail.com

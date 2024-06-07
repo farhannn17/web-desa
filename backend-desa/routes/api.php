@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 //route login
 Route::post('/login', [App\Http\Controllers\Api\Auth\LoginController::class, 'index']);
 
@@ -12,6 +11,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     //logout
     Route::post('/logout', [App\Http\Controllers\Api\Auth\LoginController::class, 'logout']);
 });
+
 
 //group route with prefix "admin"
 Route::prefix('admin')->group(function () {
@@ -49,9 +49,10 @@ Route::prefix('admin')->group(function () {
         Route::apiResource('/categories', App\Http\Controllers\Api\Admin\CategoryController::class)
             ->middleware('permission:categories.index|categories.store|categories.update|categories.delete');
 
-        //Posts
+             //Posts
         Route::apiResource('/posts', App\Http\Controllers\Api\Admin\PostController::class)
-            ->middleware('permission:posts.index|posts.store|posts.update|posts.delete');
+        ->middleware('permission:posts.index|posts.store|posts.update|posts.delete');
+
 
         //Products
         Route::apiResource('/products', App\Http\Controllers\Api\Admin\ProductController::class)
@@ -61,9 +62,6 @@ Route::prefix('admin')->group(function () {
         Route::apiResource('/pages', App\Http\Controllers\Api\Admin\PageController::class)
             ->middleware('permission:pages.index|pages.store|pages.update|pages.delete');
 
-        //Feedback
-        Route::apiResource('/feedback', App\Http\Controllers\Api\Admin\FeedbackController::class)
-            ->middleware('permission:feedback.index|feedback.store|feedback.update|feedback.delete');
 
         //Photos
         Route::apiResource('/photos', App\Http\Controllers\Api\Admin\PhotoController::class, ['except' => ['create', 'show', 'update']])
@@ -82,7 +80,7 @@ Route::prefix('admin')->group(function () {
 //group route with prefix "public"
 Route::prefix('public')->group(function () {
 
-    //index posts
+        //index posts
     Route::get('/posts', [App\Http\Controllers\Api\Public\PostController::class, 'index']);
 
     //show posts
@@ -106,12 +104,6 @@ Route::prefix('public')->group(function () {
     //show page
     Route::get('/pages/{slug}', [App\Http\Controllers\Api\Public\PageController::class, 'show']);
 
-    //index feedback
-    Route::get('/feedback', [App\Http\Controllers\Api\Public\FeedbackController::class, 'index']);
-
-    //show feedback
-    Route::get('/feedback/{slug}', [App\Http\Controllers\Api\Public\FeedbackController::class, 'show']);
-
     //index aparaturs
     Route::get('/aparaturs', [App\Http\Controllers\Api\Public\AparaturController::class, 'index']);
 
@@ -120,4 +112,8 @@ Route::prefix('public')->group(function () {
 
     //index sliders
     Route::get('/sliders', [App\Http\Controllers\Api\Public\SliderController::class, 'index']);
+
+    //saran
+    Route::apiResource('/saran', App\Http\Controllers\Saran::class);
+    
 });

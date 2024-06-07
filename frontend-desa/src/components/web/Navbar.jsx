@@ -13,34 +13,7 @@ export default function Navbar() {
   const activeRoute = pathname.split("/");
 
   return (
-    <>
-      <nav className="navbar navbar-expand-md navbar-light navbar-top d-none d-md-block d-lg-block">
-        <div className="container">
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              <li className="nav-item me-4">
-                <i className="fa fa-envelope"></i> Tanjungtirta123@gmail.com
-              </li>
-              <li className="nav-item me-4">
-                <i className="fa fa-phone"></i> +62 822-3655-9226
-              </li>
-            </ul>
-            <div>
-              IKUTI KAMI :
-              <a href="#" className="ms-2 me-2">
-                <i className="fab fa-facebook-square text-white fa-lg"></i>
-              </a>
-              <a href="http://" className="ms-2 me-2">
-                <i className="fab fa-instagram text-white fa-lg"></i>
-              </a>
-              <a href="#" className="ms-2 me-2">
-                <i className="fab fa-youtube text-white fa-lg"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <>  
       <div className="jumbotron-header pb-3">
         <div className="container">
           <div className="row">
@@ -148,7 +121,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              <li className="nav-item ms-2">
+              {/* <li className="nav-item ms-2">
                 <Link
                   className={
                     activeRoute[1] === "feedback"
@@ -159,7 +132,7 @@ export default function Navbar() {
                 >
                   <i className="fa fa-lightbulb"></i> FEEDBACK
                 </Link>
-              </li>
+              </li> */}
 
 
               <li className="nav-item ms-2">
@@ -184,11 +157,11 @@ export default function Navbar() {
                   }
                   to="/posts"
                 >
-                  <i className="fa fa-book"></i> BERITA
+                  <i className="fa fa-industry"></i> POTENSI DESA
                 </Link>
               </li>
 
-
+{/* 
               <li className="nav-item ms-2">
                 <Link
                   className={
@@ -200,7 +173,7 @@ export default function Navbar() {
                 >
                   <i className="fa fa-industry"></i> Potensi Desa
                 </Link>
-              </li>
+              </li> */}
 
               <li className="nav-item ms-2">
                 <Link
@@ -225,6 +198,20 @@ export default function Navbar() {
                   to="/photos"
                 >
                   <i className="fa fa-images"></i> GALERI
+                </Link>
+              </li>
+
+
+              <li className="nav-item ms-2">
+                <Link
+                  className={
+                    activeRoute[1] === "sarans"
+                      ? "nav-link active text-uppercase"
+                      : "nav-link text-uppercase"
+                  }
+                  to="/sarans"
+                >
+                  <i className="fa fa-lightbulb"></i> SARAN PERENCANAAN
                 </Link>
               </li>
             </ul>
